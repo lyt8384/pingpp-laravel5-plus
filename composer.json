@@ -12,8 +12,9 @@
     ],
     "require": {
         "php": ">=5.4.0",
+        "ext-curl": "*",
         "illuminate/support": "~5.0",
-        "pingplusplus/pingpp-php": "dev-master"
+        "pingplusplus/pingpp-php": "~2.0"
     },
     "autoload": {
         "psr-4": {
