@@ -1,0 +1,23 @@
+{
+    "name": "lyt8384/pingpp-laravel5-plus",
+    "description": "Simple Pingpp wrapper for Laravel 5",
+    "license": "MIT",
+    "keywords": ["laravel", "laravel 5", "Pingpp", "Pingxx" ],
+    "homepage": "https://github.com/lyt8384/pingpp-laravel5-plus",
+    "authors": [
+        {
+            "name": "lyt8384",
+            "email": "lyt8384@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~5.0",
+        "pingplusplus/pingpp-php": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "lyt8384\\Pingpp\\": "src/"
+        }
+    }
+}
