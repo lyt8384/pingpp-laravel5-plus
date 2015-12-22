@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class Elastic extends Facade {
+class Pingpp extends Facade {
 
     protected static function getFacadeAccessor()
     {
