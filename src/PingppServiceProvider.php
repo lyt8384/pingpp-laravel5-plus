@@ -1,8 +1,10 @@
-<?php namespace lyt8384\Pingpp;
+<?php
+namespace lyt8384\Pingpp;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
 use Pingpp\Pingpp;
+use lyt8384\Pingpp\PingppCollertion;
 
 class PingppServiceProvider extends ServiceProvider {
 	/**
@@ -29,8 +31,7 @@ class PingppServiceProvider extends ServiceProvider {
 							: $config['test_secret_key']
 			);
 
-			return $client;
-			
+			return new PingppCollertion();
         });
 	}
 

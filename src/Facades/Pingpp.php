@@ -1,4 +1,5 @@
-<?php namespace lyt8384\Pingpp\Facades;
+<?php
+namespace lyt8384\Pingpp\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
