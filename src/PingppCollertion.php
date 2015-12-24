@@ -4,30 +4,40 @@ use Pingpp;
 
 class PingppCollertion {
 
+    protected $method;
+
     public function __call( $method, $arg_array = null ){
-        $class = 'Pingpp\\'.$method;
-        if(class_exists($class)){
-            return new $class();
+        if($this->method){
+            if(method_exists('Pingpp\\'.$this->method,$method)){
+                $func = 'Pingpp\\'.$this->method.'::'.$method;
+                $ret = forward_static_call_array($func,$arg_array);
+                return is_callable([$ret,'__toArray'])
+                    ? $ret->__toArray()
+                    : $ret;
+            }
         }else{
-            return null;
+            $class = 'Pingpp\\'.$method;
+            if(class_exists($class)){
+                $this->method = $method;
+                return $this;
+            }else{
+                if(method_exists('Pingpp\Charge',$method)) {
+                    $func = 'Pingpp\Charge::'.$method;
+                    $ret = forward_static_call_array($func,$arg_array);
+                    return is_callable([$ret,'__toArray'])
+                        ? $ret->__toArray()
+                        : $ret;
+                }
+            }
         }
+        return null;
     }
 
     public static function __callStatic( $method, $arg_array = null ){
-        $class = 'Pingpp\\'.$method;
-        if(class_exists($class)){
-            return new $class();
-        }else{
-            return null;
-        }
+        return new self;
     }
 
     public function __get( $property ){
-        $class = 'Pingpp\\'.$property;
-        if(class_exists($class)){
-            return new $class();
-        }else{
-            return null;
-        }
+        return $this->__call($property);
     }
 }
