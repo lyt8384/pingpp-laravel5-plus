@@ -62,4 +62,8 @@ class SomeClass extends Controller {
     }
 }
 ```
+
+# 错误调用
+当Pingpp调用发生错误的时候会`return false`，此时调用`Pingpp::getError();`返回具体错误内容。
+
 其他使用方法见官方文档[PingPlusPlus](https://github.com/PingPlusPlus/pingpp-php)
