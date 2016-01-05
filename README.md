@@ -14,6 +14,7 @@ pingxx基于laravel5的封装
 1. 在`app/config/app.php`文件里的aliases变量下添加`'Pingpp' => lyt8384\Pingpp\Facades\Pingpp::class,`
 1. 运行`php artisan vendor:publish`生成配置文件
 1. 修改配置文件里面的2组key
+1. 若需回调验证，请填写`pub_key`
 
 # 使用方法
 ```php
@@ -65,5 +66,8 @@ class SomeClass extends Controller {
 
 # 错误调用
 当Pingpp调用发生错误的时候会`return false`，此时调用`Pingpp::getError();`返回具体错误内容。
+
+# 接收 Webhooks 通知
+直接调用`Pingpp::notice()`，若验证成功,会返回通知的`array`结构数据,若失败直接弹出错误回Pingpp。如果需要记录错误，请自行监听系统错误，详见[Errors & Logging](https://laravel.com/docs/5.1/errors)
 
 其他使用方法见官方文档[PingPlusPlus](https://github.com/PingPlusPlus/pingpp-php)

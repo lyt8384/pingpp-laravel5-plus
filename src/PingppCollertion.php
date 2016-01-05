@@ -1,5 +1,6 @@
 <?php
 namespace lyt8384\Pingpp;
+use Illuminate\Http\Request;
 use Pingpp;
 
 class PingppCollertion {
@@ -46,5 +47,26 @@ class PingppCollertion {
 
     public function getError(){
         return $this->err;
+    }
+
+    public function notice(){
+        $data = Request::all();
+        if (!isset($data['type'])) {
+            abort(400,'fail');
+        }
+
+        $config = config('pingpp');
+        if(!empty($config['pub_key'])){
+            $result = openssl_verify(
+                Request::getContent(),
+                Request::header('x-pingplusplus-signature'),
+                trim($config['pub_key']));
+
+            if ($result !== 1){
+                abort(403,'fail');
+            }
+        }
+
+        return $data;
     }
 }
