@@ -13,7 +13,7 @@ class PingppCollertion {
                 if(method_exists('Pingpp\\'.$this->method,$method)){
                     $func = 'Pingpp\\'.$this->method.'::'.$method;
                     $ret = forward_static_call_array($func,$arg_array);
-                    return (string)$ret;
+                    return $ret;
                 }
             }else{
                 $class = 'Pingpp\\'.$method;
@@ -24,7 +24,7 @@ class PingppCollertion {
                     if(method_exists('Pingpp\Charge',$method)) {
                         $func = 'Pingpp\Charge::'.$method;
                         $ret = forward_static_call_array($func,$arg_array);
-                        return (string)$ret;
+                        return $ret;
                     }
                 }
             }

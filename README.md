@@ -1,5 +1,6 @@
 # pingpp-laravel5-plus
 pingxx基于laravel5的封装
+[![Latest Stable Version](https://poser.pugx.org/lyt8384/pingpp-laravel5-plus/v/stable)](https://packagist.org/packages/lyt8384/pingpp-laravel5-plus) [![Total Downloads](https://poser.pugx.org/lyt8384/pingpp-laravel5-plus/downloads)](https://packagist.org/packages/lyt8384/pingpp-laravel5-plus) [![Latest Unstable Version](https://poser.pugx.org/lyt8384/pingpp-laravel5-plus/v/unstable)](https://packagist.org/packages/lyt8384/pingpp-laravel5-plus) [![License](https://poser.pugx.org/lyt8384/pingpp-laravel5-plus/license)](https://packagist.org/packages/lyt8384/pingpp-laravel5-plus)
 
 # 配置方法
 1. 在`composer.json`里添加如下内容，并运行`composer update`:
