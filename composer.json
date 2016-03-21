@@ -14,7 +14,7 @@
         "php": ">=5.4.0",
         "ext-curl": "*",
         "illuminate/support": "~5.0",
-        "pingplusplus/pingpp-php": "~2.0"
+        "pingplusplus/pingpp-php": ">=2.1.2"
     },
     "autoload": {
         "psr-4": {

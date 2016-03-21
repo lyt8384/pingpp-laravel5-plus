@@ -1,4 +1,4 @@
-# pingpp-laravel5-plus
+﻿# pingpp-laravel5-plus
 pingxx基于laravel5的封装
 
 [![Latest Stable Version](https://poser.pugx.org/lyt8384/pingpp-laravel5-plus/v/stable)](https://packagist.org/packages/lyt8384/pingpp-laravel5-plus) [![Total Downloads](https://poser.pugx.org/lyt8384/pingpp-laravel5-plus/downloads)](https://packagist.org/packages/lyt8384/pingpp-laravel5-plus) [![Latest Unstable Version](https://poser.pugx.org/lyt8384/pingpp-laravel5-plus/v/unstable)](https://packagist.org/packages/lyt8384/pingpp-laravel5-plus) [![License](https://poser.pugx.org/lyt8384/pingpp-laravel5-plus/license)](https://packagist.org/packages/lyt8384/pingpp-laravel5-plus)
@@ -16,7 +16,8 @@ pingxx基于laravel5的封装
 1. 在`app/config/app.php`文件里的aliases变量下添加`'Pingpp' => lyt8384\Pingpp\Facades\Pingpp::class,`
 1. 运行`php artisan vendor:publish`生成配置文件
 1. 修改配置文件里面的2组key
-1. 若需回调验证，请填写`pub_key`
+1. 若需回调验证，请填写`pub_key`，**注意该处是KEY的内容！**
+1. 若需要使用商户身份验证，请填写`private_key_path`，**注意该处是路径！**
 
 # 使用方法
 ```php
