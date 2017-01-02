@@ -62,11 +62,16 @@ class PingppCollertion
         }
 
         $config = config('pingpp');
-        if (!empty($config['pub_key'])) {
+        //兼容旧版
+        $pub_key = isset($config['public_key_path']) && !empty($config['public_key_path'])
+            ? (file_exists($config['public_key_path']) ? file_get_contents($config['public_key_path']) : null)
+            : (isset($config['pub_key']) && !empty($config['pub_key']) ? trim($config['pub_key']) : null);
+
+        if ($pub_key) {
             $result = openssl_verify(
                 Request()->getContent(),
                 base64_decode(Request()->header('x-pingplusplus-signature')),
-                trim($config['pub_key']),
+                $pub_key,
                 OPENSSL_ALGO_SHA256);
 
             if ($result !== 1) {
