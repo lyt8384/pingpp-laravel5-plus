@@ -12,6 +12,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
+        "laravel/framework": "5.*",
         "ext-curl": "*",
         "illuminate/support": "~5.0",
         "pingplusplus/pingpp-php": ">=2.1.2"
