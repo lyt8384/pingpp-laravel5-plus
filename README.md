@@ -14,7 +14,7 @@ pingxx基于laravel5的封装
 ```
 1. 在`app/config/app.php`文件里的providers变量下添加`lyt8384\Pingpp\PingppServiceProvider::class,`
 1. 在`app/config/app.php`文件里的aliases变量下添加`'Pingpp' => lyt8384\Pingpp\Facades\Pingpp::class,`
-1. 运行`php artisan vendor:publish`生成配置文件
+1. 运行`php artisan vendor:publish --provider="lyt8384\Pingpp\PingppServiceProvider"`生成配置文件
 1. 修改配置文件里面的2组key
 1. 若需回调验证，请填写`public_key_path`，**注意该处是路径！**，这里参考官方已改为路径，同时当前会兼容旧版本配置文件
 1. 若需要使用商户身份验证，请填写`private_key_path`，**注意该处是路径！**
