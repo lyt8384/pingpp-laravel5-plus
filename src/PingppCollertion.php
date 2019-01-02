@@ -16,6 +16,7 @@ class PingppCollertion
                 if (method_exists('Pingpp\\' . $this->method, $method)) {
                     $func = 'Pingpp\\' . $this->method . '::' . $method;
                     $ret = forward_static_call_array($func, $arg_array);
+                    $this->method = null;
                     return $ret;
                 }
             } else {
